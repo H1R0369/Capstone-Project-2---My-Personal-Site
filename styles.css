@@ -11,12 +11,9 @@
     align-items: flex-start;
     flex-grow: 1;
     height: 250px;
+    padding: 10px;
     background-color: #1B262C;
     color: white;
-}
-
-.logo-txt {
-    margin: 10px;
 }
 
 .nav-links-flexbox {
@@ -25,8 +22,7 @@
 }
 
 .nav-links {
-    margin: 10px;
-    margin-bottom: 2px;
+    margin: 0px 10px;
 }
 
 .nav-links li {
