@@ -19,15 +19,17 @@
 .nav-links-flexbox {
     display: flex;
     flex-direction: column;
+    margin-block: auto;
 }
 
 .nav-links {
     margin: 0px 10px;
+    text-align: center;
 }
 
 .nav-links li {
-    margin-bottom: 12px;
-    font-size: 10px;
+    margin-bottom: 25px;
+    font-size: 13px;
     list-style: none;
 }
 
@@ -37,9 +39,9 @@
 }
 
 .nav-links-flexbox > a {
-    text-decoration: none;
     line-height: 25px;
     border-radius: 20px;
+    text-decoration: none;
     background-color: white;
 }
 
