@@ -113,6 +113,7 @@
 .edu-gridbox {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    place-items: center;
     gap: 10px;
 }
 
@@ -127,6 +128,5 @@
 }
 
 .edu-description {
-    grid-row: span 2;
     font-size: 0.8rem;
 }
