@@ -98,10 +98,7 @@
 }
 
 #resume > section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 50px 25px;
 }
 
 #education {
