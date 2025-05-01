@@ -8,15 +8,7 @@ function TriggerPopAnim($el, className, duration = 240) {
     setTimeout(() => $el.removeClass(className), duration);
 }
 
-$(".txt").hover(function () {
-    TriggerPopAnim($(this), "pop");
-});
-
 $(".txt").click(function () {
-    TriggerPopAnim($(this), "pop");
-});
-
-$("img").hover(function () {
     TriggerPopAnim($(this), "pop");
 });
 
