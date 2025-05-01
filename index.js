@@ -1,7 +1,7 @@
 $(".txt").hide().slideUp().slideDown();
 $("img").hide().slideUp().slideDown();
 
-function TriggerPopAnim($el, className, duration = 240) {
+function TriggerPopAnim($el, className, duration = 300) {
     $el.removeClass(className);
     void $el[0].offsetWidth;
     $el.addClass(className);
