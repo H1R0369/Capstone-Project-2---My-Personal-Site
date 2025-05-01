@@ -1,7 +1,7 @@
 // Keep track of currently animating elements and their timeouts
 let animationTimeouts = {};
 
-function TriggerPopAnim($el, className, duration = 50) {
+function TriggerPopAnim($el, className, duration = 300) {
     const elementId = $el.index(); // Use element index as identifier
     
     // Clear any existing animation on this element
