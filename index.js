@@ -1,18 +1,47 @@
-$(".txt").hide().slideUp().slideDown();
-$("img").hide().slideUp().slideDown();
+// Keep track of currently animating elements and their timeouts
+let animationTimeouts = {};
 
-function TriggerPopAnim($el, className, duration = 300) {
+function TriggerPopAnim($el, className, duration = 240) {
+    const elementId = $el.index(); // Use element index as identifier
+    
+    // Clear any existing animation on this element
     $el.removeClass(className);
+    clearTimeout(animationTimeouts[elementId]);
+    
+    // Force reflow
     void $el[0].offsetWidth;
+    
+    // Start new animation
     $el.addClass(className);
-    setTimeout(() => $el.removeClass(className), duration);
+    
+    // Store the timeout reference
+    animationTimeouts[elementId] = setTimeout(() => {
+        $el.removeClass(className);
+        delete animationTimeouts[elementId];
+    }, duration);
 }
 
-$(".txt").click(function () {
-    TriggerPopAnim($(this), "pop");
+// Remove the incomplete handler
+// $(".txt").on("hover") - DELETE THIS LINE
+
+// Simplify by combining selectors
+$(".txt, img").hover(function() {
+    // Only trigger on hover for non-touch devices
+    if (!('ontouchstart' in window)) {
+        TriggerPopAnim($(this), "pop");
+    }
 });
 
-$("img").click(function () {
+$(".txt, img").click(function() {
+    // Remove animation class from all elements first
+    $(".txt, img").removeClass("pop");
+    
+    // Clear all existing timeouts
+    Object.keys(animationTimeouts).forEach(key => {
+        clearTimeout(animationTimeouts[key]);
+        delete animationTimeouts[key];
+    });
+    
+    // Then animate just the clicked element
     TriggerPopAnim($(this), "pop");
 });
-  
