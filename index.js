@@ -3,23 +3,26 @@ $("img").hide().slideUp().slideDown();
 
 $(".txt").on("hover")
 
+function TriggerPopAnim($el, className, duration = 300) {
+    $el.removeClass(className);
+    void $el[0].offsetWidth;
+    $el.addClass(className);
+    setTimeout(() => $el.removeClass(className), duration);
+}
+
 $(".txt").hover(function () {
-    $(this).addClass("pop");
-    setTimeout(() => $(this).removeClass("pop"), 300);
+    TriggerPopAnim($(this), "pop");
 });
 
 $(".txt").click(function () {
-    $(this).addClass("pop");
-    setTimeout(() => $(this).removeClass("pop"), 300);
+    TriggerPopAnim($(this), "pop");
 });
 
 $("img").hover(function () {
-    $(this).addClass("pop");
-    setTimeout(() => $(this).removeClass("pop"), 300);
+    TriggerPopAnim($(this), "pop");
 });
 
 $("img").click(function () {
-    $(this).addClass("pop");
-    setTimeout(() => $(this).removeClass("pop"), 300);
+    TriggerPopAnim($(this), "pop");
 });
   
