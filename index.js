@@ -1,3 +1,6 @@
+$(".txt").hide().slideUp().slideDown();
+$("img").hide().slideUp().slideDown();
+
 // Keep track of currently animating elements and their timeouts
 let animationTimeouts = {};
 
